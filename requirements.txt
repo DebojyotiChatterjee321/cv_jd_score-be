@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+google.generativeai
+PyPDF2==3.0.1
+python-dotenv
+python-multipart
