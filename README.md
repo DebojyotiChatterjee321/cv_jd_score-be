@@ -1,4 +1,4 @@
-# cv-score-be
+# cv_jd_score-be
 Analyze CV vs JD and get a score along with details about the Candidate and if they are a good fit for the job.
 Also, get skills of teh candidate that match and that are missing.
 
