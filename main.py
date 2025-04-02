@@ -1,6 +1,7 @@
 import json
 import os
 from dotenv import load_dotenv
+import uvicorn
 from fastapi import FastAPI, UploadFile, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.params import File, Form
@@ -25,7 +26,7 @@ load_dotenv() # Load environment variables from .env file
 
 
 api_key = os.getenv("GOOGLE_API_KEY") # Get the API key from the environment variables
-
+port = int(os.getenv("PORT", 8000))
 
  # Create a route for the root URL
 @app.get("/")
@@ -69,3 +70,7 @@ async def create_upload_file(request:Request):
         return JSONResponse(content=response_json)   
     except Exception as e:
         return JSONResponse(content={"Error": str(e)})
+    
+    # Run the app programmatically
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=port)
